@@ -1,0 +1,53 @@
+// function binary(arr,value,start,end){
+//     if(start>end){
+//         return false
+//     }
+//     let middele_point = Math.floor((start+end)/2)
+//     if(arr[middele_point]===value) return true;
+
+//     if(arr[middele_point]>value) return binary(arr,value,start,middele_point-1)
+//     else  return binary(arr,value,middele_point+1,end)
+// }
+
+let arr = [1,2,4,5,7,8,9]
+
+let value = 7
+
+function binary(arr,value,start,end){
+    if(start>end){
+        return -1
+    }
+    let middele_point = Math.floor((start+end)/2);
+    
+    if(arr[middele_point]===value) return middele_point;
+    else if(arr[middele_point]>value) return binary(arr,value,0,middele_point-1);
+    else return binary(arr,value,middele_point+1,end)
+}
+
+console.log(binary(arr,value,0,6))
+// brute force 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function b(arr,value){
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]==value){
+            return("present")
+        }
+    }
+    return("not present ")
+}
+
+console.log(b(arr,value))
